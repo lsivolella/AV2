@@ -21,9 +21,9 @@ function Resultado() {
   const total = votos.length;
   const resultado = calcularResultado(votos);
   // O primeiro da lista é o Craque do Jogo e o segundo é o vice
-  const lider = resultado[0];
+  const craque = resultado[0];
   const vice = resultado[1];
-  const vantagem = lider.votos - vice.votos;
+  const vantagem = craque.votos - vice.votos;
 
   function classeDoItem(indice) {
     if (indice === 0) return 'placar-item placar-craque';
@@ -60,8 +60,8 @@ function Resultado() {
         <>
           <p className="disputa" aria-live="polite">
             {vantagem === 0
-              ? `Empate na liderança: ${lider.nome} e ${vice.nome} têm ${formatarVotos(lider.votos)} cada.`
-              : `${lider.nome} lidera com ${formatarVotos(vantagem)} de vantagem sobre ${vice.nome}.`}
+              ? `Empate na liderança: ${craque.nome} e ${vice.nome} têm ${formatarVotos(craque.votos)} cada.`
+              : `${craque.nome} lidera com ${formatarVotos(vantagem)} de vantagem sobre ${vice.nome}.`}
           </p>
 
           <ol className="placar">
